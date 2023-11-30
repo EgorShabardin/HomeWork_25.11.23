@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace Тумаков___Лабораторная_работа__14
 {
@@ -46,6 +47,18 @@ namespace Тумаков___Лабораторная_работа__14
                         Console.Clear();
                         Console.WriteLine("{0, 96}", "УПРАЖНЕНИЕ 14.2. КЛАССУ RationalNumber ДОБАВЛЕН ПОЛЬЗОВАТЬСКИЙ АТРИБУТ\n");
 
+                        MemberInfo typeInfo = typeof(RationalNumber);
+                        object[] attributes = typeInfo.GetCustomAttributes(false);
+
+                        foreach (Attribute attribute in attributes)
+                        {
+                            if (attribute is DeveloperInfoEx1Attribute)
+                            {
+                                DeveloperInfoEx1Attribute developerInfo = (DeveloperInfoEx1Attribute)attribute;
+                                Console.WriteLine($"{developerInfo.DeveloperName}, {developerInfo.ClassDevelopmentDate}");
+                            }
+                        }
+
                         Console.Write("Чтобы закончить выполнение упражнения, нажмите на любую кнопку ");
                         Console.ReadKey();
                         Console.Clear();
@@ -55,6 +68,18 @@ namespace Тумаков___Лабораторная_работа__14
                         // Домашнее задание 14.1. Классу Building добавлен пользовательский атрибут.
                         Console.Clear();
                         Console.WriteLine("{0, 96}", "ДОМАШНЕЕ ЗАДАНИЕ 14.1. КЛАССУ Building ДОБАВЛЕН ПОЛЬЗОВАТЬСКИЙ АТРИБУТ\n");
+
+                        typeInfo = typeof(Building);
+                        attributes = typeInfo.GetCustomAttributes(false);
+
+                        foreach (Attribute attribute in attributes)
+                        {
+                            if (attribute is DeveloperInfoEx2Attribute)
+                            {
+                                DeveloperInfoEx2Attribute developerInfo = (DeveloperInfoEx2Attribute)attribute;
+                                Console.WriteLine($"{developerInfo.DeveloperName}, {developerInfo.OrganizationName}");
+                            }
+                        }
 
                         Console.Write("Чтобы закончить выполнение упражнения, нажмите на любую кнопку ");
                         Console.ReadKey();

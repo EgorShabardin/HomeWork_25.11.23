@@ -8,9 +8,9 @@ namespace Тумаков___Лабораторная_работа__14
     [AttributeUsage(AttributeTargets.Class)]
     class DeveloperInfoEx1Attribute : Attribute
     {
-        #region Поля
-        readonly string developerName;
-        readonly string classDevelopmentDate;
+        #region Автоствойства
+        public string DeveloperName { get; }
+        public string ClassDevelopmentDate { get; }
         #endregion
 
         #region Конструкторы
@@ -21,8 +21,8 @@ namespace Тумаков___Лабораторная_работа__14
         /// <param name="classDevelopmentDate"> Дата разработки. </param>
         public DeveloperInfoEx1Attribute(string developerName, string classDevelopmentDate)
         {
-            this.developerName = developerName;
-            this.classDevelopmentDate = classDevelopmentDate;
+            DeveloperName = developerName;
+            ClassDevelopmentDate = classDevelopmentDate;
         }
         #endregion
     }

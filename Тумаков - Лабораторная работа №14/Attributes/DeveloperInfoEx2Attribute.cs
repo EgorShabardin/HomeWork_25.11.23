@@ -8,9 +8,9 @@ namespace Тумаков___Лабораторная_работа__14
     [AttributeUsage(AttributeTargets.Class)]
     class DeveloperInfoEx2Attribute : Attribute
     {
-        #region Поля
-        readonly string developerName;
-        readonly string organizationName;
+        #region Автосвойства
+        public string DeveloperName { get; }
+        public string OrganizationName { get; }
         #endregion
 
         #region Конструкторы
@@ -21,8 +21,8 @@ namespace Тумаков___Лабораторная_работа__14
         /// <param name="organizationName"> Название организации. </param>
         public DeveloperInfoEx2Attribute(string developerName, string organizationName)
         {
-            this.developerName = developerName;
-            this.organizationName = organizationName;
+            DeveloperName = developerName;
+            OrganizationName = organizationName;
         }
         #endregion
     }
