@@ -8,7 +8,7 @@ namespace Тумаков___Лабораторная_работа__14
     [AttributeUsage(AttributeTargets.Class)]
     class DeveloperInfoEx1Attribute : Attribute
     {
-        #region Автоствойства
+        #region Автосвойства
         public string DeveloperName { get; }
         public string ClassDevelopmentDate { get; }
         #endregion
